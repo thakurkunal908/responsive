@@ -151,7 +151,7 @@ nav ul li a:hover{
 }
 .projects{
     background-color:rgba(0,0,0,.9);
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .projects>.container{
@@ -246,6 +246,9 @@ input[type=submit]:hover{
     }
     .skills>.row{
         flex-direction: column;
+    }
+    .projects>.container{
+        width: 100%;
     }
     .projects>.container>.project{
         width: 100%;
