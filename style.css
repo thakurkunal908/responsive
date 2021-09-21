@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root{
+    --font-size-xl :3rem;
+    --font-size-400 :1rem;
+    --font-size-600 :1.25rem;
+    --font-size-800:2.5rem;
+
+    --primary-clr :rgb(150, 247, 171);
+    --secondary-clr:whitesmoke;
+}
+
+@media screen and (max-width:768px) {
+    :root{
+        --font-size-xl :2rem;
+        --font-size-800:2.25rem;
+    }
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+/*Base Styling*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins",Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    font-size: var(--font-size-600);
+    font-weight: 400;
+    color: var(--secondary-clr)
+}
+
+h1{
+    font-weight: 800;
+    font-size:var(--font-size-800);
+    margin: 1.6rem 0;
+}
+
+h2{
+    font-size: var(--font-size-600);
+    font-weight: 800;
+    margin: 1.6rem 0;
+}
+
+p{
+    font-weight: 400;
+    font-size:var(--font-size-400);
+    margin: 1.6rem 0;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+
+/*utility classes*/
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+
+/* navigation */
+
+header{
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.6)), url('./statics/bgimg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.logo h1{
+    font-size: var(--font-size-xl);
+    color:var(--primary-clr);
+    margin:0;
+}
+
+nav{
+    padding: 2% 8%;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 2.5rem;
+}
+
+nav ul li a:hover{
+    color:var(--primary-clr);
+    transition: .5sec ease-in-out;
+}
+.hamburger{
+    display: none;
+}
+
+.header-content{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    color:var(--secondary-clr);
+}
+
+.header-content>a{
+    color: #000;
+    margin: 10px 0;
+    display: inline-block;
+    padding: 12px 10px;
+    font-size: var(--font-size-600);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:var(--primary-clr);
+
+}
+
+.header-content>a:hover{
+    background-color:rgba(0,0,0,.9);
+    color: var(--primary-clr);
+}
+
+
+/* skills */
+.skills>.row{
+    justify-content: space-about;
+}
+
+.skills>.row .left,.right,.center{
+    padding: 0 1.6rem;
+    flex-basis: 30%;
+}
+.projects{
+    background-color:rgba(0,0,0,.9);
+    padding: 2rem;
+}
+
+.projects>.container{
+    width: 80%;
+    margin-inline:auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projects>.container>.project{
+    background-color: var(--secondary-clr);
+    border: 1px solid var(--primary-clr);
+    width: 30%;
+    margin: 5px;
+}
+
+.project p{
+    text-align: center;
+}
+
+.contact .container{
+    display: flex;
+    align-items: center;
+}
+.contact .container>*{
+flex-basis: 100%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3rem;
+    gap:1rem;
+}
+
+input[type=text],input[type=email],textarea{
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+}
+input[type=submit]{
+    padding: 14px 20px;
+    border: 1px solid #ccc;
+    color: #222;
+    background-color:var(--primary-clr);
+    font-size: var(--font-size-600);
+    border-radius: 5px;
+}
+input[type=submit]:hover{
+    background-color: rgb(46, 41, 41);
+    color:var(--secondary-clr);
+}
+
+.contact .info{
+    font-size: var(--font-size-600);
+    padding: 2rem 3rem;
+}
+/*Media Queries*/
+
+@media screen and (max-width:768px){
+    nav{
+        flex-direction: column;
+        position: relative;
+    }
+    .hamburger{
+        display: block;
+        position:absolute;
+        top: 16px;
+        right: 16px;
+        cursor: pointer;
+    }
+    nav ul{
+        background-color:var(--secondary-clr);
+        display: none;
+    }
+    .showmenu{
+        display: block;
+    }
+    nav ul li{
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+    nav ul li a{
+        color: #222;
+        display: block;
+        padding: 2% 2%;
+
+    }
+    nav ul li a:hover{
+        background-color: rgb(46, 41, 41);
+    }
+    .skills>.row{
+        flex-direction: column;
+    }
+    .projects>.container>.project{
+        width: 100%;
+        margin: 5px;
+    }
+    .contact .container{
+        flex-direction: column;
+        align-items:stretch;
+    }
+}
